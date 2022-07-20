@@ -24,6 +24,8 @@ class PreviewActivity : AppCompatActivity() {
             BitmapFactory.decodeFile(myFile.path),
             isBackCamera
         )
+
+        val resultWithoutRotate =BitmapFactory.decodeFile(myFile.path)
         binding.imgPreview.setImageBitmap(result)
 
         binding.btnSearch.setOnClickListener {

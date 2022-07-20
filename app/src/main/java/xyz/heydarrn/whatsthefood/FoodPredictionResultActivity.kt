@@ -19,7 +19,10 @@ class FoodPredictionResultActivity : AppCompatActivity() {
         setContentView(bindingResultPrediction.root)
 
         val pictureReceived=intent.getSerializableExtra("photo") as File
-        val resultPhoto= BitmapFactory.decodeFile(pictureReceived.path)
+        val resultPhoto= rotateBitmap(
+            BitmapFactory.decodeFile(pictureReceived.path), true
+        )
+
 
         setPhotoResult(resultPhoto)
         setPredictionResult(pictureReceived)
@@ -42,6 +45,7 @@ class FoodPredictionResultActivity : AppCompatActivity() {
                 }
             }
         }
+        
 
     }
 
